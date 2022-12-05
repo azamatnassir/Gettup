@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cda53f51-9846-4494-9b60-1b6548b8c297" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="83780e5e-7b9b-47ec-b85c-2334f4b1f35e" value="Green" />
+    </colors>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2I9JK0AiFCotuDVGyiX0oylnU6j" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "SQL Updates",
+    "database.data.extractors.current.id": "SQL Updates",
+    "last_opened_file_path": "D:/EPAM_Java/gettup/src/main/resources/static/img",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "spring.configuration.checksum": "48d29db6bcf3c803247f28b0d69422dd"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\EPAM_Java\gettup\src\main\resources\static\img" />
+      <recent name="D:\EPAM_Java\gettup\src\main\resources\templates" />
+      <recent name="D:\EPAM_Java\gettup\src\main\resources\templates\general" />
+      <recent name="D:\EPAM_Java\gettup\src\main\resources\templates\creator" />
+      <recent name="D:\EPAM_Java\gettup\src\main\resources\templates\student" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\EPAM_Java\gettup\src\main\resources\templates\general" />
+      <recent name="D:\EPAM_Java\gettup\src\main\resources\templates" />
+      <recent name="D:\EPAM_Java\gettup\src\main\resources\static\css" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.gettup.services" />
+      <recent name="com.example.gettup.repositories" />
+      <recent name="com.example.gettup.controllers" />
+      <recent name="com.example.gettup.models" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="GettupApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gettup" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.gettup.GettupApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cda53f51-9846-4494-9b60-1b6548b8c297" name="Changes" comment="" />
+      <created>1669587798858</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669587798858</updated>
+      <workItem from="1669587800288" duration="19165000" />
+      <workItem from="1669665643614" duration="1410000" />
+      <workItem from="1669735948400" duration="573000" />
+      <workItem from="1669743870100" duration="8206000" />
+      <workItem from="1669753066270" duration="85014000" />
+      <workItem from="1670087417918" duration="9622000" />
+      <workItem from="1670103651537" duration="8495000" />
+      <workItem from="1670132756077" duration="49313000" />
+      <workItem from="1670191659299" duration="24739000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
