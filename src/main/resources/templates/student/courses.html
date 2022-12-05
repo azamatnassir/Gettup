@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Gettup</title>
+    <div th:replace="fragments/headerFragment.html :: header"></div>
+    <script>
+        $(document).on('show.bs.modal', '.modal', function () {
+            $(this).appendTo('body');
+        });
+    </script>
+</head>
+<body>
+
+<div th:replace="fragments/navbar.html :: studentNavbar"></div>
+
+<div class="course-container">
+    <br><br>
+    <div class="row">
+        <div class="col">
+            <h3>Public courses</h3>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="row gx-1">
+        <div class="col-4" th:each="course : ${courses}">
+            <div class="card" style="width: 18rem; border-radius: 15px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+                <img alt="Course avatar" class="card-img-top"
+                     height="140rem" src=""
+                     style="border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom: 1px solid gray;"
+                     th:src="@{'data:image/jpeg;base64,'+${course.generateBase64Image()}}">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${course.getName()}"></h5>
+                    <p class="card-text" th:text="${course.getDescription()}"></p>
+                    <button class="btn btn-dark course-btn" data-bs-toggle="modal" id="modal-btn-open"
+                            style="width: 100%" th:attr="data-bs-target='#modal'+${course.id}">Enroll
+                    </button>
+                </div>
+            </div>
+
+            <div th:replace="fragments/navbar.html :: modal"></div>
+
+        </div>
+    </div>
+</div>
+
+<div th:if="${#lists.isEmpty(courses)}">
+    <h5 class="no-courses">Courses not added yet</h5>
+</div>
+
+</body>
+</html>

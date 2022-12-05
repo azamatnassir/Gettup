@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Gettup</title>
+    <div th:replace="fragments/headerFragment.html :: header"></div>
+</head>
+<body>
+
+<div sec:authorize="hasRole('ROLE_STUDENT')">
+    <div th:replace="fragments/navbar.html :: studentNavbar"></div>
+
+    <div class="course-container">
+        <br><br>
+        <h3>Enroll for course</h3>
+        <br><br>
+
+        <div class="card mb-3" style="border-radius: 15px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img alt="..." style="border-top-left-radius: 15px; border-bottom-left-radius: 15px;" class="img-fluid"
+                         src="..." th:src="@{'data:image/jpeg;base64,'+${course.generateBase64Image()}}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body" style="position: relative; height: 100%;">
+                        <h2 class="card-title" th:text="${course.getName()}"></h2>
+                        <p class="card-text" th:text="${course.getDescription()}"></p>
+                        <form method="post" th:action="@{/enroll}">
+                            <input style="float: right" th:name="courseId" th:value="${course.getId()}" type="hidden">
+                            <input class="btn btn-outline-dark course-btn"
+                                   style="position: absolute; bottom:10px; width: 90%;" type="submit" value="ENROLL">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div sec:authorize="hasRole('ROLE_CREATOR')">
+
+    <div th:replace="fragments/navbar.html :: creatorNavbar"></div>
+
+    <div class="course-container">
+        <br><br>
+        <div class="row">
+            <div class="col-6">
+                <h3>My courses</h3>
+            </div>
+            <div class="col-6">
+                <a class="btn btn-outline-dark" style="float: right" th:href="@{/create/course}">ADD COURSE</a>
+            </div>
+        </div>
+        <br><br>
+
+        <div th:if="${not #lists.isEmpty(courses)}">
+            <div class="row">
+                <div class="col-4" th:each="course : ${courses}">
+                    <div class="card" style="width: 18rem; border-radius: 15px;">
+                        <img alt="Course avatar" class="card-img-top"
+                             height="140rem" src="" style="border-top-left-radius: 15px; border-top-right-radius: 15px;"
+                             th:src="@{'data:image/jpeg;base64,'+${course.generateBase64Image()}}">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${course.getName()}"></h5>
+                            <p class="card-text" th:text="${course.getDescription()}"></p>
+                            <a class="btn btn-primary course-btn" style="width: 100%"
+                               th:href="@{/creator/course}">Open</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div th:if="${#lists.isEmpty(courses)}">
+            <h5 class="no-courses">Courses not added yet</h5>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
