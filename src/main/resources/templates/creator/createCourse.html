@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gettup</title>
+    <div th:replace="fragments/headerFragment.html :: header"></div>
+</head>
+<body>
+
+<div th:insert="fragments/navbar.html :: creatorNavbar"></div>
+
+<div class="course-container">
+    <h3>My courses</h3>
+
+    <div class="row">
+        <form method="post" th:action="@{/create/course}" enctype="multipart/form-data">
+            <div class="col-5">
+                <div class="mb-3">
+                    <label class="form-label" for="formFile">Course avatar (optional)</label>
+                    <input class="form-control" id="formFile" th:name="avatar" type="file">
+                </div>
+            </div>
+            <div class="col-7">
+                <div class="mb-3">
+                    <label class="form-label" for="exampleFormControlInput1">Course name</label>
+                    <input class="form-control" id="exampleFormControlInput1" placeholder="Enter name" th:name="name"
+                           type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="exampleFormControlTextarea1">Course description (optional)</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                              th:name="description"></textarea>
+                </div>
+                <div class="mb-3">
+                    <input class="btn btn-outline-dark" style="float: right" type="submit" value="SAVE">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

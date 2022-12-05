@@ -1,0 +1,146 @@
+<div th:fragment="navbar">
+    <nav class="navbar navbar-light navbar-expand-lg px-5" style="background-color: #ededed; font-size: 16px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href=""><strong>GETTUP</strong></a>
+            <button aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navbarSupportedContent1" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item px-2 " th:classappend="${home}">
+                        <a class="nav-link" th:href="@{/}"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item px-2" th:classappend="${pricing}">
+                        <a class="nav-link" th:href="@{/pricing}"><b>Pricing</b></a>
+                    </li>
+                    <li class="nav-item px-2" th:classappend="${features}">
+                        <a class="nav-link" th:href="@{/features}"><b>Features</b></a>
+                    </li>
+                    <li class="nav-item px-2" th:classappend="${about}">
+                        <a class="nav-link" th:href="@{/about}"><b>About us</b></a>
+                    </li>
+                    <li class="nav-item px-2" th:classappend="${support}">
+                        <a class="nav-link" th:href="@{/support}"><b>Support</b></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav me-0">
+                    <li class="nav-item px-2 me-0">
+                        <a class="btn btn-primary" th:href="@{/login}">Log in</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div th:fragment="creatorNavbar">
+    <nav class="navbar navbar-light navbar-expand-lg px-5" style="background-color: #ededed; font-size: 16px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href=""><strong>GETTUP</strong></a>
+            <button aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navbarSupportedContent2" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item px-2" th:classappend="${home}">
+                        <a class="nav-link" th:href="@{/home}"><b>My courses</b></a>
+                    </li>
+                    <li class="nav-item px-2" th:classappend="${students}">
+                        <a class="nav-link" th:href="@{/students}"><b>My students</b></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav me-0">
+                    <li class="nav-item px-2 me-0">
+                        <a class="nav-link" th:href="@{/profile}"
+                           th:text="${#authentication.getPrincipal().getFullName()}"></a>
+                    </li>
+                    <li class="nav-item px-2 me-0">
+                        <a class="btn btn-primary" th:href="@{/logout}">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div th:fragment="studentNavbar">
+    <nav class="navbar navbar-light navbar-expand-lg px-5 py-2" style="background-color: #ededed; font-size: 16px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href=""><strong>GETTUP</strong></a>
+            <button aria-controls="navbarSupportedContent3" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navbarSupportedContent3" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent3">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item px-2" th:classappend="${public}">
+                        <a class="nav-link" th:href="@{/public/courses}"><b>Public courses</b></a>
+                    </li>
+                    <li class="nav-item px-2" th:classappend="${home}">
+                        <a class="nav-link" th:href="@{/home}"><b>My courses</b></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav me-0">
+                    <li class="nav-item px-2 me-0">
+                        <a class="nav-link" th:href="@{/profile}"
+                           th:text="${#authentication.getPrincipal().getFullName()}"></a>
+                    </li>
+                    <li class="nav-item px-2 me-0">
+                        <a class="btn btn-primary" th:href="@{/logout}">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div th:fragment="footer">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top px-5">
+        <div class="col-md-4 d-flex align-items-center">
+            <a class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1" href="/">
+                <strong>GETTUP</strong>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© 2022 Company, Inc</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a style="font-size: 16px;" class="text-muted" href="#"><i class="bi bi-instagram"></i></a></li>
+            <li class="ms-3"><a style="font-size: 16px;" class="text-muted" href="#"><i class="bi bi-telegram"></i></a></li>
+            <li class="ms-3"><a style="font-size: 16px;" class="text-muted" href="#"><i class="bi bi-whatsapp"></i></a></li>
+        </ul>
+    </footer>
+</div>
+
+<div th:fragment="modal">
+    <div class="modal fade" th:id="'modal' + ${course.id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Enroll for course</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card" style="width: 100%; border: none">
+                        <img style="border-bottom: 2px solid gray" th:src="@{'data:image/jpeg;base64,'+${course.generateBase64Image()}}" class="card-img-top" alt="Course avatar">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${course.getName()}"></h5>
+                            <p class="card-text" th:text="${course.getDescription()}"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <form method="post" th:action="@{/enroll}">
+                        <input style="float: right" type="hidden" th:value="${course.getId()}" th:name="courseId">
+                        <input type="submit" class="btn btn-primary course-btn" value="Enroll">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

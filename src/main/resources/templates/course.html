@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Gettup</title>
+    <div th:replace="fragments/headerFragment.html :: header"></div>
+</head>
+<body>
+
+<div sec:authorize="hasRole('ROLE_STUDENT')">
+    <div th:replace="fragments/navbar.html :: studentNavbar"></div>
+
+    <div class="course-container" style="width: 50%">
+        <br>
+        <div class="card" style="border-radius: 10px;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        <img alt="Course avatar" class="card-img-top"
+                             height="110rem" src=""
+                             style="border-radius: 10px;"
+                             th:src="@{'data:image/jpeg;base64,'+${course.generateBase64Image()}}">
+                    </div>
+                    <div class="col-8">
+                        <div class="row row-cols-1">
+                            <div class="col"><h4 th:text="${course.name}"></h4></div>
+                            <div class="col" th:text="${course.description}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="card" style="width: 100%">
+            <div class="card-header">
+                Lessons:
+            </div>
+            <div th:if="${#lists.isEmpty(course.getLessons())}">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Lessons not added yet</li>
+                </ul>
+            </div>
+            <div th:if="${not #lists.isEmpty(course.getLessons())}">
+                <ul class="list-group list-group-flush" th:each="lesson : ${course.getLessons()}">
+                    <li class="list-group-item">
+
+                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button aria-controls="panelsStayOpen-collapseOne" aria-expanded="true"
+                                            class="accordion-button"
+                                            data-bs-target="#panelsStayOpen-collapseOne" data-bs-toggle="collapse"
+                                            th:text="${lesson.title}" type="button"></button>
+                                </h2>
+                                <div aria-labelledby="panelsStayOpen-headingOne"
+                                     class="accordion-collapse collapse show"
+                                     id="panelsStayOpen-collapseOne">
+                                    <div class="accordion-body">
+                                        <div class="text-center">
+                                            <img alt="Image"
+                                                 style="border: 1px solid red; height: 200px;"
+                                                 th:src="@{'data:image/jpeg;base64,'+${lesson.getFiles().get(0).generateBase64Image()}}"><br><br>
+                                        </div>
+                                        <div th:text="${lesson.description}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div sec:authorize="hasRole('ROLE_CREATOR')">
+
+    <div th:replace="fragments/navbar.html :: creatorNavbar"></div>
+
+    <div class="course-container" style="width: 50%">
+        <br>
+        <div class="card" style="border-radius: 10px;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        <img alt="Course avatar" class="card-img-top"
+                             height="110rem" src=""
+                             style="border-radius: 10px;"
+                             th:src="@{'data:image/jpeg;base64,'+${course.generateBase64Image()}}">
+                    </div>
+                    <div class="col-8">
+                        <div class="row row-cols-1">
+                            <div class="col"><h4 th:text="${course.name}"></h4></div>
+                            <div class="col" th:text="${course.description}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="card" style="width: 100%">
+            <div class="card-header">
+                Lessons:
+            </div>
+            <div th:if="${#lists.isEmpty(course.getLessons())}">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Lessons not added yet</li>
+                </ul>
+            </div>
+            <div th:if="${not #lists.isEmpty(course.getLessons())}">
+                <ul class="list-group list-group-flush" th:each="lesson : ${course.getLessons()}">
+                    <li class="list-group-item">
+                        <div class="accordion" id="accordionPanelsStayOpenExample2">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne2">
+                                    <button aria-controls="panelsStayOpen-collapseOne2" aria-expanded="true"
+                                            class="accordion-button"
+                                            data-bs-target="#panelsStayOpen-collapseOne2" data-bs-toggle="collapse"
+                                            th:text="${lesson.title}" type="button"></button>
+                                </h2>
+                                <div aria-labelledby="panelsStayOpen-headingOne"
+                                     class="accordion-collapse collapse show"
+                                     id="panelsStayOpen-collapseOne2">
+                                    <div class="accordion-body">
+                                        <div class="text-center">
+                                            <img alt="Image"
+                                                 style="border: 1px solid red; height: 200px;"
+                                                 th:src="@{'data:image/jpeg;base64,'+${lesson.getFiles().get(0).generateBase64Image()}}"><br><br>
+                                        </div>
+                                        <div th:text="${lesson.description}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <form method="post" th:action="@{/create/lesson}">
+                        <input style="float: right" th:name="courseId" th:value="${course.getId()}"
+                               type="hidden">
+                        <input class="btn btn-primary course-btn" type="submit"
+                               value="Add lesson">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
