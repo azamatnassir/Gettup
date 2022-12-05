@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gettup</title>
+    <div th:replace="fragments/headerFragment.html :: header"></div>
+</head>
+<body>
+
+<div th:replace="fragments/navbar.html :: navbar"></div>
+<div class="container-fluid" style="min-height: 100vh">
+    <div class="row">
+        <div class="col-6 text-center" style="display: flex; flex-direction: column; justify-content: center; align-content: center">
+            <br><br><br><br><br><br>
+            <br><br><br>
+
+            <div class="row">
+                <div class="col" style="font-size: 80px; font-weight: bold;">
+                    GETTUP
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="font-size: 18px;">
+                    Online <strong>platform</strong> for your online school
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <img style="width: 70%" th:src="@{/img/landing.png}" alt="">
+        </div>
+    </div>
+</div>
+</body>
+</html>
